@@ -18,40 +18,16 @@ async def cbstart(_, query: CallbackQuery):
 ❓ **𝗙𝗼𝗿 𝗶𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻 𝗮𝗯𝗼𝘂𝘁 𝗮𝗹𝗹 𝗳𝗲𝗮𝘁𝘂𝗿𝗲 𝗼𝗳 𝘁𝗵𝗶𝘀 𝗯𝗼𝘁, 𝗷𝘂𝘀𝘁 𝘁𝘆𝗽𝗲 /help**
 </b>""",
         reply_markup=InlineKeyboardMarkup(
-            [ 
-                [
-                    InlineKeyboardButton(
-                        "➕ Add me to your Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
-                ],[
-                    InlineKeyboardButton(
-                        "❓ How to use Me", callback_data="cbhowtouse")
-                ],[
-                    InlineKeyboardButton(
-                         "📚 Commands", callback_data="cbcmds"
-                    ),
-                    InlineKeyboardButton(
-                        "💝 Donate", url=f"https://t.me/{OWNER_NAME}")
-                ],[
-                    InlineKeyboardButton(
-                        "👥 Official Group", url=f"https://t.me/{SUPPORT_GROUP}"
-                    ),
-                    InlineKeyboardButton(
-                        "📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}")
-                ],[
-                    InlineKeyboardButton(
-                        "🧪 Source Code 🧪", url="https://github.com/QuennArzoo/VCPlayBot"
-                    )
-                ]
-            ]
+            
         ),
      disable_web_page_preview=True
     )
 
 
-@Client.on_callback_query(filters.regex("cbhelp"))
+@Client.on_callback_query(filters.regex("mhelp"))
 async def cbhelp(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>💡 Hello there, welcome to the help menu !</b>
+        f"""<b> Hello there, welcome to the help menu !</b>
 
 **in this menu you can open several available command menus, in each command menu there is also a brief explanation of each command**
 
